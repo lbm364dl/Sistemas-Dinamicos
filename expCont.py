@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import eqs
 from rk import it
 
-to_file = True
+to_file = False
 # ecuaciones
 func = eqs.fRossler
 dfunc = eqs.dfRossler
@@ -12,13 +12,12 @@ N = 3
 # iteraciones de transición
 trans = 1000
 # iteraciones totales
-its = 5000
+its = 10000
 # pasos de iteración para un jacobiano
 jump = 10 
 
 # dato inicial
-#x = np.array([0.12, 1.13, 0.34])
-x = np.array([0, 1, 0])
+x = np.array([0.12, 1.13, 0.34])
 h = 0.01
 
 # transitorio
@@ -59,4 +58,4 @@ for i in range(N):
     plt.plot(times, exps[i])
 
 plt.show()
-print(cur_exps/(h*jump*(its-trans)))
+print(cur_exps/(h*jump*(its-trans+1)))
