@@ -50,7 +50,7 @@ for i in range(trans, its+1):
 np.set_printoptions(precision = 8, suppress = True)
 
 if to_file:
-    with open('liapCont.dat', 'w') as f:
+    with open('exp_cont.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, [i, *xps])) for i, xps in zip(times, exps)))
 
 exp_sum = list(map(sum, exps))

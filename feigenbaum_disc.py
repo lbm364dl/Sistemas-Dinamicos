@@ -25,7 +25,7 @@ for p in np.linspace(mn, mx, 2000):
 
 dat = sorted(dat)
 if to_file:
-    with open('feigenbaum.dat', 'w') as f:
+    with open('feigenbaum_disc.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, d)) for d in dat))
 
 p, x = zip(*dat)

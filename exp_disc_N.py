@@ -32,7 +32,7 @@ for i in range(trans, its+1):
     x = func(x)
 
 if to_file:
-    with open('liapDiscN.dat', 'w') as f:
+    with open('exp_disc.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, [i, *xps])) for i, xps in zip(times, exps)))
 
 exp_sum = list(map(sum, exps))

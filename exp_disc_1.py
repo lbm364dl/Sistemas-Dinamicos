@@ -20,7 +20,7 @@ for i in range(1, its+1):
         x[j] = func(val)
 
 if to_file:
-    with open('liapDisc1.dat', 'w') as f:
+    with open('exp_disc.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, [i, *vals])) for i, vals in enumerate(zip(*l), 1)))
 
 for val in l:
