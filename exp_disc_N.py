@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import eqs
 
-to_file = True
+to_file = False
 func = eqs.fIkeda
 dfunc = eqs.dfIkeda
 N = 2
@@ -35,9 +35,13 @@ if to_file:
     with open('liapDiscN.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, [i, *xps])) for i, xps in zip(times, exps)))
 
+exp_sum = list(map(sum, exps))
+plt.plot(times, exp_sum, label = 'suma')
+
 exps = list(zip(*exps))
 for i in range(N):
     plt.plot(times, exps[i])
 
+plt.legend()
 plt.show()
 print(cur_exps/(its-trans+1))

@@ -53,9 +53,13 @@ if to_file:
     with open('liapCont.dat', 'w') as f:
         f.write('\n'.join(' '.join(map(str, [i, *xps])) for i, xps in zip(times, exps)))
 
+exp_sum = list(map(sum, exps))
+plt.plot(times, exp_sum, label = 'suma')
+
 exps = list(zip(*exps))
 for i in range(N):
     plt.plot(times, exps[i])
 
+plt.legend()
 plt.show()
 print(cur_exps/(h*jump*(its-trans+1)))
