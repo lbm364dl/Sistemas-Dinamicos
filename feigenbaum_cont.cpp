@@ -13,6 +13,7 @@ double C = 2.5;
 double x[N];
 double k[5][N];
 
+// ejemplo con las ecuaciones de Rossler
 void f(double v[]){
 	double x = v[0], y = v[1], z = v[2];
 	v[0] = -y -z;
