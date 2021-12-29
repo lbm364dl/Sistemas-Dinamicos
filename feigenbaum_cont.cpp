@@ -55,6 +55,7 @@ void it(){
 
 int main(){
 	const double mn = C, mx = 6;
+	// son iteraciones, no tiempo (t = h * it)
 	const int trans = 5000, its = 100000;
 	// coordenada sobre la que hacer el diagrama con los máximos (x = 0, y = 1, z = 2)
 	const int coord = 2;
@@ -77,7 +78,7 @@ int main(){
 			double x2 = x[coord];
 			// puntos del diagrama serán los máximos de una de las coordenadas
 			if(x0 < x1 && x1 > x2){
-				// interpolación cuadrática
+				// interpolación cuadrática (fórmula simplificada obtenida del profesor)
             			double xmx = x1 - (x2-x0)*(x2-x0)/((x2-2*x1+x0)*8);
 				fs << C << " " << xmx << "\n";
 			}
