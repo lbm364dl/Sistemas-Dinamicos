@@ -19,6 +19,14 @@ def plot_random(its, n, x1, x2, y1, y2, func, markersize = 1, style = 'x-', line
         # plot de iteración de cada dato inicial, cambiando colores para mejor visualización
         plot(c0, its, func, style = style, color = colors[j % len(colors)], markersize = markersize)
 
+def to_file(x, its, func):
+    l = [x]
+    for i in range(its):
+        x = func(x)
+        l.append(x)
+
+    with open('iter.dat', 'w') as f:
+        f.write('\n'.join(' '.join(map(str, [i, *x])) for i, x in enumerate(l)))
 
 # ejemplos plots de la aplicación estándar
 f = eqs.fStandard
@@ -38,3 +46,6 @@ plot(np.array([0.63, 0.61]), 1000, f, color = 'black', style = 'x', markersize =
 plot(np.array([0.12, 1.14]), 1000, f, color = 'cyan', style = 'x', markersize = 1)
 plot(np.array([3, 6]), 1000, f, color = 'red', style = 'x', markersize = 1)
 plt.show()
+
+# ejemplo escribir iteraciones en fichero
+to_file(np.array([1, 1]), 1000, f)
